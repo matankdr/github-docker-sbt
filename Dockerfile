@@ -4,7 +4,7 @@ FROM adoptopenjdk/openjdk11:jdk-11.0.5_10-alpine
 LABEL maintainer="matankdr@gmail.com"
 
 RUN set -x \
-  && apk --update add --virtual .build-deps curl \
+  && apk --update add --no-cache --virtual .build-deps curl \
   && SBT_VER="1.3.8" \
   && ESUM="27b2ed49758011fefc1bd05e1f4156544d60673e082277186fdd33b6f55d995d" \
   && SBT_URL="https://piccolo.link/sbt-${SBT_VER}.tgz" \
