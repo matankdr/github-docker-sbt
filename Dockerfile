@@ -22,13 +22,13 @@ RUN set -x \
   && apk del --purge .build-deps \
   && rm -rf /tmp/sbt-${SBT_VER}.tgz /var/cache/apk/*
 
-#WORKDIR /opt/workspace
 
-#ENTRYPOINT ["sbt"]
+ADD entrypoint.sh /entrypoint.sh
+
 
 ENV PATH="/opt/sbt/sbt/bin:$PATH" \
     JAVA_OPTS="-XX:+UseContainerSupport -Dfile.encoding=UTF-8" \
     SBT_OPTS="-Xmx2048M -Xss2M"
 
 #RUN sbt about
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["/entrypoint.sh"]
