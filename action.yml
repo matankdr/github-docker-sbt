@@ -1,5 +1,5 @@
 # action.yml
-name: 'SBT Action'
+name: 'Scala SBT Action'
 author: 'Matan Keidar <matankdr@gmail.com>'
 description: 'SBT build tool action'
 inputs:
