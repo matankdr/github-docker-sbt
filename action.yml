@@ -1,0 +1,18 @@
+# action.yml
+name: 'SBT Action'
+author: 'Matan Keidar <matankdr@gmail.com>'
+description: 'SBT build tool action'
+inputs:
+  commands:  # id of input
+    description: 'SBT commands'
+    required: true
+    default: 'test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.commands }}
+
+branding:
+  icon: 'package'
+  color: 'blue'

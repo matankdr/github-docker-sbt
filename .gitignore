@@ -1,0 +1,39 @@
+# idea stuff
+*.iml
+.idea/
+
+# scala staff
+*.class
+*.log
+*.jar
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+
+# Scala-IDE specific
+.scala_dependencies
+.classpath
+.cache
+.project
+.settings/
+.metadata/
+
+#logs
+logs/
+
+# resources
+*.pdf
+*.txt
+native/
+
+# junk files
+.DS_Store
+*.out
+*.err
+tmp/
