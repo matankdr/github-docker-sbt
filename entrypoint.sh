@@ -1,5 +1,6 @@
 #!/bin/sh
 
 sbt version
-sbt "${@}"
+set -x
+sbt "${@}";
 
