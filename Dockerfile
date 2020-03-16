@@ -13,6 +13,7 @@ RUN set -x \
   && apk add openssh \
   && apk add rsync \
   && apk add git \
+  && apk add docker \
   && curl -Ls ${SBT_URL} > /tmp/sbt-${SBT_VER}.tgz \
   && sha256sum /tmp/sbt-${SBT_VER}.tgz \
   && (echo "${ESUM}  /tmp/sbt-${SBT_VER}.tgz" | sha256sum -c -) \
