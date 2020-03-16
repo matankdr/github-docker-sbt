@@ -2,5 +2,5 @@
 
 sbt version
 set -x
-sbt "${@}";
+${@}
 
