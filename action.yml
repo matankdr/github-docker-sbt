@@ -1,16 +1,27 @@
 # action.yml
 name: 'Scala SBT Action'
 author: 'Matan Keidar <matankdr@gmail.com>'
-description: 'SBT build tool action'
+description: 'SBT build tool action with docker'
 inputs:
   commands:  # id of input
-    description: 'SBT commands'
+    description: 'Commands to run'
     required: true
-    default: 'test'
+  docker-login-username:  # Docker login username
+    description: 'docker login username'
+    required: true
+  docker-login-password:  # Docker login password
+    description: 'docker login password'
+    required: true
+  docker-registry:  # Docker registry
+    description: 'docker registry'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.docker-login-username }}
+    - ${{ inputs.docker-login-password }}
+    - ${{ inputs.docker-registry }}
     - ${{ inputs.commands }}
 
 branding:
