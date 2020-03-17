@@ -22,7 +22,7 @@ runs:
     - ${{ inputs.docker-login-username }}
     - ${{ inputs.docker-login-password }}
     - ${{ inputs.docker-registry }}
-    - ${{ inputs.commands }}
+    - ${{ inputs.command }}
 
 branding:
   icon: 'package'
