@@ -3,18 +3,18 @@ name: 'Scala SBT Action'
 author: 'Matan Keidar <matankdr@gmail.com>'
 description: 'SBT build tool action with docker'
 inputs:
-  commands:  # id of input
+  command:  # id of input
     description: 'Commands to run'
     required: true
   docker-login-username:  # Docker login username
     description: 'docker login username'
-    required: true
+    required: false
   docker-login-password:  # Docker login password
     description: 'docker login password'
-    required: true
+    required: false
   docker-registry:  # Docker registry
     description: 'docker registry'
-    required: true
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
