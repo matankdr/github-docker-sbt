@@ -22,7 +22,7 @@ mkdir ~/.ivy2/ || echo "Ivy folder is exists"
 mkdir /root/.ivy2/ || echo "Ivy folder is exists"
 
 echo ${IVY_CONF} >> ~/.ivy2/credentials || echo "Couldn't write ivy into ~/.ivy2/credentials"
-echo ${IVY_CONF} >> /root/.ivy2/credentials || echo "Couldn't write ivy into /root/.ivy2/credentials"
+echo ${IVY_CONF} >> /root/.ivy2/credentials || sudo echo ${IVY_CONF} >> /root/.ivy2/credentials || echo "Couldn't write ivy into /root/.ivy2/credentials"
 
 echo "Running command"
 ${COMMAND}
