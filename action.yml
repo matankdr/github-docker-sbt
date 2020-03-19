@@ -6,6 +6,9 @@ inputs:
   command:  # id of input
     description: 'Commands to run'
     required: true
+  packages-resolver:  # packages resolver
+    description: 'packages resolver'
+    required: true
   docker-login-username:  # Docker login username
     description: 'docker login username'
     required: false
@@ -15,18 +18,16 @@ inputs:
   docker-registry:  # Docker registry
     description: 'docker registry'
     required: false
-  packages-resolver:  # packages resolver
-    description: 'packages resolver'
-    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.command }}
+    - ${{ inputs.packages-resolver }}
     - ${{ inputs.docker-login-username }}
     - ${{ inputs.docker-login-password }}
     - ${{ inputs.docker-registry }}
-    - ${{ inputs.command }}
-    - ${{ inputs.packages-resolver }}
 
 branding:
   icon: 'package'

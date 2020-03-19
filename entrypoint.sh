@@ -1,20 +1,15 @@
 #!/bin/sh
 
 set -x
-COMMAND=""
-IVY_CONF=""
-if [[ -z "${1}" || -z "${2}" || -z "${3}" ]]; then
-  echo "One or more variables are not defined, will run command"
-  COMMAND = $1
-  IVY_CONF = $2
+COMMAND=$1
+IVY_CONF=$2
+if [[ -z "${3}" || -z "${4}" || -z "${5}" ]]; then
+  echo "One or more variables are not defined, will only run command"
 else
-  DOCKER_USERNAME=$1
-  DOCKER_PASSWORD=$2
-  DOCKER_REGISTRY=$3
-  COMMAND=$4
-  IVY_CONF=$5
+  DOCKER_USERNAME=$3
+  DOCKER_PASSWORD=$4
+  DOCKER_REGISTRY=$5
   echo "Running docker login into ${DOCKER_REGISTRY}"
-
   echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin ${DOCKER_REGISTRY}
 fi
 
