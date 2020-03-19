@@ -19,6 +19,7 @@ else
 fi
 
 echo "Running command"
+mkdir ~/.ivy2/ || echo "Ivy folder is exists"
 echo ${IVY_CONF} >> ~/.ivy2/credentials
 ${COMMAND}
 
