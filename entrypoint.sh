@@ -18,8 +18,12 @@ else
   echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin ${DOCKER_REGISTRY}
 fi
 
-echo "Running command"
 mkdir ~/.ivy2/ || echo "Ivy folder is exists"
-echo ${IVY_CONF} >> ~/.ivy2/credentials
+mkdir /root/.ivy2/ || echo "Ivy folder is exists"
+
+echo ${IVY_CONF} >> ~/.ivy2/credentials || echo "Couldn't write ivy into ~/.ivy2/credentials"
+echo ${IVY_CONF} >> /root/.ivy2/credentials || echo "Couldn't write ivy into /root/.ivy2/credentials"
+
+echo "Running command"
 ${COMMAND}
 

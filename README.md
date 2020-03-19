@@ -5,13 +5,13 @@ Examples:
 
 ```$xslt
 name: Run tests
-        uses: matankdr/github-docker-sbt@11.0.5-1.3.8-DOCKER-IVY-CREDS
+        uses: matankdr/github-docker-sbt@11.0.5-1.3.8-DOCKER-IVY-CREDS2
         with:
           packages-resolver: "ivy creds"
           command: sbt test
 
 name: Run test and upload container
-        uses: matankdr/github-docker-sbt@11.0.5-1.3.8-DOCKER-IVY-CREDS
+        uses: matankdr/github-docker-sbt@11.0.5-1.3.8-DOCKER-IVY-CREDS2
         with:
           docker-login-username: "my username"
           docker-login-password: "my password"
