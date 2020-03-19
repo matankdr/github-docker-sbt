@@ -3,7 +3,7 @@
 set -x
 COMMAND=""
 IVY_CONF=""
-if [[ -z ${1} || -z ${2} || -z ${3} ]]; then
+if [[ -z "${1}" || -z "${2}" || -z "${3}" ]]; then
   echo "One or more variables are not defined, will run command"
   COMMAND = $1
   IVY_CONF = $2
