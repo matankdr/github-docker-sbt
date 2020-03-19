@@ -15,6 +15,9 @@ inputs:
   docker-registry:  # Docker registry
     description: 'docker registry'
     required: false
+  packages-resolver:  # packages resolver
+    description: 'packages resolver'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -23,6 +26,7 @@ runs:
     - ${{ inputs.docker-login-password }}
     - ${{ inputs.docker-registry }}
     - ${{ inputs.command }}
+    - ${{ inputs.packages-resolver }}
 
 branding:
   icon: 'package'
