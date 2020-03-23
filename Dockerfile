@@ -23,6 +23,8 @@ RUN set -x \
   && apk del --purge .build-deps \
   && rm -rf /tmp/sbt-${SBT_VER}.tgz /var/cache/apk/*
 
+COPY github-credentials.sbt /root/.sbt/1.0/
+
 
 ADD entrypoint.sh /entrypoint.sh
 
