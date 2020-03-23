@@ -16,10 +16,10 @@ fi
 mkdir ~/.ivy2/ || echo "Ivy folder is exists"
 mkdir /root/.ivy2/ || echo "Ivy folder is exists"
 
-echo ${IVY_CONF} >> ~/.ivy2/credentials || echo "Couldn't write ivy into ~/.ivy2/credentials"
-echo ${IVY_CONF} >> /root/.ivy2/credentials || sudo echo ${IVY_CONF} >> /root/.ivy2/credentials || echo "Couldn't write ivy into /root/.ivy2/credentials"
-cat ~/.ivy2/credentials || "~/.ivy2/credentials not found"
-cat /root/.ivy2/credentials || "/root/.ivy2/credentials"
+echo ${IVY_CONF} > ~/.ivy2/credentials || echo "Couldn't write ivy into ~/.ivy2/credentials"
+echo ${IVY_CONF} > /root/.ivy2/credentials || sudo echo ${IVY_CONF} > /root/.ivy2/credentials || echo "Couldn't write ivy into /root/.ivy2/credentials"
+echo $(cat ~/.ivy2/credentials) || "~/.ivy2/credentials not found"
+echo $(cat /root/.ivy2/credentials) || "/root/.ivy2/credentials"
 echo "Running command"
 ${COMMAND}
 
