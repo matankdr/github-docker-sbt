@@ -33,5 +33,9 @@ ENV PATH="/opt/sbt/sbt/bin:$PATH" \
     JAVA_OPTS="-XX:+UseContainerSupport -Dfile.encoding=UTF-8" \
     SBT_OPTS="-Xmx2048M -Xss2M"
 
+RUN git config --global user.email ${GITHUB_USER_EMAIL} \
+    && git config --global user.name ${GITHUB_USERNAME} \
+    && git config --global user.password ${GITHUB_PASSWORD}
+
 #RUN sbt about
 ENTRYPOINT ["/entrypoint.sh"]
