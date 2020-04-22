@@ -1,0 +1,14 @@
+name: Check action
+
+on: [push]
+
+jobs:
+  check-working-dir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Verify sbt command gets invoked in the specified directory
+        uses: ./
+        with:
+          command: sbt userdir
+          working-directory: .github/data
