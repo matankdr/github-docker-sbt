@@ -3,6 +3,14 @@ name: Check action
 on: [push]
 
 jobs:
+  check-baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Verify sbt command gets invoked in the specified directory
+        uses: ./
+        with:
+          command: sbt name
   check-working-dir:
     runs-on: ubuntu-latest
     steps:
