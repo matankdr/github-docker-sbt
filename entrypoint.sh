@@ -6,6 +6,7 @@ git config --global user.name ${GITHUB_USERNAME}
 git config --global user.password ${GITHUB_PASSWORD}
 
 COMMAND=$1
+WORKING_DIR="$5"
 if [[ -z "${2}" || -z "${3}" || -z "${4}" ]]; then
   echo "One or more variables are not defined, will only run command"
 else

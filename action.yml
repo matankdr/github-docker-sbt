@@ -25,10 +25,10 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
-    - ${{ inputs.working-directory }}
     - ${{ inputs.docker-login-username }}
     - ${{ inputs.docker-login-password }}
     - ${{ inputs.docker-registry }}
+    - ${{ inputs.working-directory }}
 
 branding:
   icon: 'package'
