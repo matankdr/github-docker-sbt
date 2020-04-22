@@ -6,13 +6,12 @@ git config --global user.name ${GITHUB_USERNAME}
 git config --global user.password ${GITHUB_PASSWORD}
 
 COMMAND=$1
-WORKING_DIR=$2
-if [ -z "${3}" ] || [ -z "${4}" ] || [ -z "${5}" ]; then
+if [[ -z "${2}" || -z "${3}" || -z "${4}" ]]; then
   echo "One or more variables are not defined, will only run command"
 else
-  DOCKER_USERNAME=$3
-  DOCKER_PASSWORD=$4
-  DOCKER_REGISTRY=$5
+  DOCKER_USERNAME=$2
+  DOCKER_PASSWORD=$3
+  DOCKER_REGISTRY=$4
   echo "Running docker login into ${DOCKER_REGISTRY}"
   echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin ${DOCKER_REGISTRY}
 fi
