@@ -17,7 +17,7 @@ inputs:
     description: 'docker login password'
     required: false
   docker-registry:  # Docker registry
-    description: 'docker registry'
+    description: 'docker registry, defaults to DockerHub'
     required: false
 
 runs:
