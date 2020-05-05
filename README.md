@@ -14,6 +14,7 @@ name: Run test and upload container
         uses: matankdr/github-docker-sbt@11.0.5-1.3.8-DOCKER-IVY-CREDS7
         with:
           command: sbt test docker:publish publish
+          working-directory: subproject/
           packages-resolver: "ivy creds"  
           docker-login-username: "my username"
           docker-login-password: "my password"

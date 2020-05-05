@@ -6,6 +6,10 @@ inputs:
   command:  # id of input
     description: 'Commands to run'
     required: true
+  working-directory:
+    description: 'A directory to run SBT in'
+    required: false
+    default: .
   docker-login-username:  # Docker login username
     description: 'docker login username'
     required: false
@@ -24,6 +28,7 @@ runs:
     - ${{ inputs.docker-login-username }}
     - ${{ inputs.docker-login-password }}
     - ${{ inputs.docker-registry }}
+    - ${{ inputs.working-directory }}
 
 branding:
   icon: 'package'

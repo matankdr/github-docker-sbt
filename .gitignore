@@ -16,6 +16,9 @@ project/boot/
 project/plugins/project/
 .history
 
+# action test specific
+.github/target
+
 # Scala-IDE specific
 .scala_dependencies
 .classpath
