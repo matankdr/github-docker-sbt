@@ -18,8 +18,9 @@ else
   [ -z "$DOCKER_REGISTRY" ] || echo "Using custom registry: ${DOCKER_REGISTRY}"
   echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin ${DOCKER_REGISTRY}
   cat ~/.docker/config.json
+  mkdir -p  /root/.docker
   cp ~/.docker/config.json /root/.docker/config.json
-  #/github/home/.docker/config.json.
+
 fi
 
 echo "Running command in ${WORKING_DIR}"
