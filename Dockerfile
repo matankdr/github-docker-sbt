@@ -1,5 +1,6 @@
 # https://hub.docker.com/r/adoptopenjdk/openjdk11
-FROM adoptopenjdk/openjdk8:jdk8u242-b08-alpine-slim
+#FROM adoptopenjdk/openjdk8:jdk8u242-b08-alpine-slim
+FROM maven:3.6-jdk-8-alpine
 
 LABEL maintainer="matankdr@gmail.com"
 
